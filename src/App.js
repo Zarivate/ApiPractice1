@@ -61,6 +61,7 @@ const App = () => {
         setPlaces(data?.filter((place) => place.name && place.num_reviews > 0));
         // Anytime we get new place data, we have to reset the filteredPlaces array
         setFilteredPlaces([]);
+        setRating("");
         setIsLoading(false);
       });
     }
