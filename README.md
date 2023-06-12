@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Working Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For a working demo of this site please visit [`here`](https://648621f7d2a28e47274b0d10--jazzy-gaufre-859dfa.netlify.app/).
 
-## Available Scripts
+Note: Will need to give site access to location to properly work.
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+Install [`Node.js`](https://nodejs.org/en) if not already installed
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installing Dependencies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Run this command within your terminal IDE
 
-### `npm test`
+```Javascript
+npm install @material-ui/core @material-ui/icons @material-ui/lab @react-google-maps/api axios google-map-react
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Retrieve a RapidAPI Key from [`here`](https://rapidapi.com/apidojo/api/travel-advisor)
 
-### `npm run build`
+Note: You may be required to signUp for RapidAPI before being allowed access.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Afterwards, place API key within the index.js file. Replacing the .env in the headers like so.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```Javascript
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+headers: {
+    "X-RapidAPI-Key": TravelAdvisor API key goes here,
+    "X-RapidAPI-Host": "travel-advisor.p.rapidapi.com",
+}
 
-### `npm run eject`
+headers: {
+    "X-RapidAPI-Key": TravelAdvisor API key goes here,
+    "X-RapidAPI-Host": "community-open-weather-map.p.rapidapi.com",
+},
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Retrieve a Google Maps API key from [`here`](https://cloud.google.com/blog/products/maps-platform). A signup for Google may be necessary if you don't already have an account.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Afterwards, place the API key within the Map.jsx file.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```Javascript
+bootstrapURLKeys={{
+          key: Google Maps API key goes here,
+        }}
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Known Issues
 
-## Learn More
+1. Blocking access to location results in empty attraction and no Google Maps.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2. Use of a VPN prevents any results from populating, even when allowed access to VPN location.
